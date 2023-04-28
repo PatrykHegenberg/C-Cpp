@@ -35,9 +35,19 @@ int main() {
   // std::cout << "Die Groesse (in bytes) von n ist:" << sizeof(n) << std::endl;
   
   // Strings
-  std::string str;
-  str = "Hallo Welt";
-  std::cout << "Der Wert von str ist: " << str << std::endl;
-  std::cout << "Die Groesse (in bytes) von str ist: " << sizeof(str) << std::endl;
+  // std::string str;
+  // str = "Hallo Welt";
+  // std::cout << "Der Wert von str ist: " << str << std::endl;
+  // std::cout << "Die Groesse (in bytes) von str ist: " << sizeof(str) << std::endl;
 
+  // int k = 12;
+  // std::string str = "Krickel";
+
+  // auto v1 = k;
+
+  // std::cout << "Typ von v1 ist: " << typeid(v1).name() << std::endl;
+
+  // auto v2 = "Meier";
+
+  // std::cout << "Type von v2 ist: " << typeid(v2).name() << std::endl;
 }
