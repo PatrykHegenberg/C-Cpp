@@ -1,0 +1,18 @@
+[
+  {
+    "arguments": [
+      "/usr/bin/g++",
+      "-c",
+      "-I",
+      "/usr/include/c++/11",
+      "-I",
+      "/usr/include/x86_64-linux-gnu/c++/11",
+      "-o",
+      "teiler",
+      "teiler.cpp"
+    ],
+    "directory": "/home/pata/dev/C-Cpp/lecture3/teiler",
+    "file": "/home/pata/dev/C-Cpp/lecture3/teiler/teiler.cpp",
+    "output": "/home/pata/dev/C-Cpp/lecture3/teiler/teiler"
+  }
+]

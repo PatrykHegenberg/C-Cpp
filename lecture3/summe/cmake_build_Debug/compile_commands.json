@@ -1,0 +1,7 @@
+[
+{
+  "directory": "/home/pata/dev/C-Cpp/lecture3/summe/cmake_build_Debug",
+  "command": "/usr/bin/c++   -g -o CMakeFiles/summe.dir/src/summe.cpp.o -c /home/pata/dev/C-Cpp/lecture3/summe/src/summe.cpp",
+  "file": "/home/pata/dev/C-Cpp/lecture3/summe/src/summe.cpp"
+}
+]

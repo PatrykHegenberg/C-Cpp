@@ -4,4 +4,6 @@
 *.o
 *.out 
 
-build/
+build/*
+.cache/*
+.cache

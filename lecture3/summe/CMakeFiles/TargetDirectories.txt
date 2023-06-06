@@ -1,0 +1,3 @@
+/home/pata/dev/C-Cpp/lecture3/summe/CMakeFiles/summe.dir
+/home/pata/dev/C-Cpp/lecture3/summe/CMakeFiles/edit_cache.dir
+/home/pata/dev/C-Cpp/lecture3/summe/CMakeFiles/rebuild_cache.dir
