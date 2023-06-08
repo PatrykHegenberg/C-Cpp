@@ -1,0 +1,15 @@
+[
+  {
+    "arguments": [
+      "/usr/bin/aarch64-linux-gnu-g++-10",
+      "-c",
+      "-o",
+      "sudoku",
+      "sudoku.cpp",
+      "-g"
+    ],
+    "directory": "/home/pata/dev/C-Cpp/lecture3/sudoku",
+    "file": "/home/pata/dev/C-Cpp/lecture3/sudoku/sudoku.cpp",
+    "output": "/home/pata/dev/C-Cpp/lecture3/sudoku/sudoku.o"
+  }
+]

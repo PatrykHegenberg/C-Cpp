@@ -22,7 +22,7 @@ vector<vector<char>> readSudoku() {
 void printSudoku(vector<vector<char>> sudoku) {
     for (size_t i = 0; i < sudoku.size(); i++) {
         if (i % 3 == 0) {
-            cout << " --- --- ---" << endl;
+            cout << "   ---   ---   ---" << endl;
         }
         for (size_t j = 0; j < sudoku[i].size(); j++) {
             if (j % 3 == 0) {
@@ -32,7 +32,7 @@ void printSudoku(vector<vector<char>> sudoku) {
         }
         cout << " | " << endl;
     }
-    cout << " --- --- --- " << endl;
+    cout << "   ---   ---   ---" << endl;
 }
 
 bool isValid(vector<vector<char>>& sudoku, int row, int col, char num) {
