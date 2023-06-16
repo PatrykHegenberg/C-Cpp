@@ -1,0 +1,14 @@
+[
+  {
+    "arguments": [
+      "/usr/bin/aarch64-linux-gnu-g++-10",
+      "-c",
+      "-o",
+      "main2",
+      "main2.cpp"
+    ],
+    "directory": "/home/pata/dev/C-Cpp/lecture4",
+    "file": "/home/pata/dev/C-Cpp/lecture4/main2.cpp",
+    "output": "/home/pata/dev/C-Cpp/lecture4/main2.o"
+  }
+]
