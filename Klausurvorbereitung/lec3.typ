@@ -434,3 +434,381 @@ int main() {
     }
 ```)
 Sets sind nützlich, wenn eine geordnete Sammlung von eindeutigen Elementen benötigt wird. Sie eignen sich gut für Aufgaben wie das Entfernen von Duplikaten aus einer Liste von Elementen oder das schnelle Suchen nach bestimmten Werten. Die Verwendung eines Sets erfordert in der Regel ein gewisses Verständnis der Sortierung der Elemente und ihrer Einzigartigkeit. Sets sind eine wertvolle Ergänzung der C++-Standardbibliothek und bieten eine effiziente Implementierung, um eindeutige Daten zu verwalten.
+== Mehrfache Elemente und Element-Identität in Sets
+Sets in C++ sind Container-Klassen, die eine geordnete Sammlung eindeutiger Elemente speichern. Wenn Elemente zu einem Set hinzugefügt werden, werden Duplikate automatisch entfernt, da ein Set keine doppelten Elemente zulässt. Elemente werden in aufsteigender Reihenfolge gespeichert, um eine schnelle Suche und den Zugriff zu ermöglichen.
+=== Hinzufügen von Elementen in ein Set:
+Wenn wir Elemente zu einem Set hinzufügen, wird automatisch geprüft, ob das Element bereits im Set vorhanden ist. Falls ja, wird das Element nicht erneut hinzugefügt. Dadurch wird sichergestellt, dass das Set immer nur eindeutige Elemente enthält.
+
+Beispiel:
+#boxed(```cpp
+#include <iostream>
+#include <set>
+
+int main() {
+    std::set<int> mySet;
+
+    mySet.insert(10);
+    mySet.insert(20);
+    mySet.insert(10); // Wird ignoriert, da 10 bereits im Set vorhanden ist
+
+    for (int num : mySet) {
+        std::cout << num << " ";
+    }
+
+    return 0;
+}```)
+
+Die Ausgabe dieses Beispiels wird sein: 10 20, da das doppelte Hinzufügen des Elements "10" ignoriert wird.
+=== Suchen nach Elementen in einem Set:
+Bei der Suche nach Elementen in einem Set können wir die Methode find() verwenden, um nach einem bestimmten Wert zu suchen. Wenn das Element im Set vorhanden ist, gibt find() einen Iterator zurück, der auf das gesuchte Element zeigt. Wenn das Element nicht gefunden wird, gibt find() den Iterator, der auf das Ende des Sets zeigt (mySet.end()), zurück.
+
+Beispiel:
+#boxed(```cpp
+#include <iostream>
+#include <set>
+
+int main() {
+    std::set<std::string> mySet = {"Apple", "Banana", "Orange"};
+
+    std::set<std::string>::iterator it = mySet.find("Banana");
+    if (it != mySet.end()) {
+        std::cout << "Element gefunden: " << *it << std::endl;
+    } else {
+        std::cout << "Element nicht gefunden." << std::endl;
+    }
+
+    return 0;
+}
+```)
+Die Ausgabe dieses Beispiels wird sein: Element gefunden: Banana, da "Banana" im Set vorhanden ist.
+=== Element-Identität und Sortierung in einem Set:
+Sets in C++ werden in aufsteigender Reihenfolge gespeichert, um eine schnelle Suche und den Zugriff zu ermöglichen. Die Sortierung basiert auf dem kleiner-als-Vergleichsoperator (<), den die Elemente unterstützen müssen, damit sie im Set verwendet werden können.
+
+Beispiel:
+#boxed(```cpp
+#include <iostream>
+#include <set>
+
+int main() {
+    std::set<std::string> mySet = {"Orange", "Banana", "Apple"};
+
+    for (const std::string& fruit : mySet) {
+        std::cout << fruit << " ";
+    }
+
+    return 0;
+}
+```)
+Die Ausgabe dieses Beispiels wird sein: Apple Banana Orange, da die Elemente in aufsteigender Reihenfolge gespeichert werden.
+
+Sets bieten eine effiziente Möglichkeit, eine eindeutige Sammlung von Elementen zu speichern und darauf zuzugreifen. Sie entfernen automatisch Duplikate und stellen sicher, dass die Elemente in einer geordneten Reihenfolge gespeichert werden. Sets sind nützlich, wenn Sie eine eindeutige Liste von Elementen benötigen und deren Reihenfolge bei der Speicherung beibehalten möchten.
+== Maps in C++
+Maps in C++ sind Container-Klassen, die eine Menge von Schlüssel-Wert-Paaren speichern. Jeder Schlüssel in einer Map muss eindeutig sein, und die Elemente werden nach den Schlüsseln sortiert, um eine schnelle Suche und den Zugriff zu ermöglichen. Maps sind ähnlich wie Sets, jedoch speichern sie nicht nur eindeutige Werte, sondern verknüpfen diese auch mit bestimmten Schlüsseln.
+=== Erstellen einer Map
+Um eine Map in C++ zu verwenden, müssen wir die <map>-Header-Datei inkludieren und den Container-Typ std::map verwenden. Der Typ des Schlüssels und der Wert müssen ebenfalls angegeben werden.
+
+Beispiel:
+#boxed(```cpp
+#include <iostream>
+#include <map>
+
+int main() {
+    std::map<std::string, int> myMap;
+
+    // Schlüssel-Wert-Paare hinzufügen
+    myMap["Alice"] = 25;
+    myMap["Bob"] = 30;
+    myMap["Charlie"] = 22;
+
+    for (const auto& entry : myMap) {
+        std::cout << entry.first << ": " << entry.second << std::endl;
+    }
+
+    return 0;
+}```)
+Die Ausgabe dieses Beispiels wird sein:
+
+Alice: 25
+Bob: 30
+Charlie: 22
+
+=== Elemente in einer Map suchen und zugreifen
+Das Suchen nach Elementen in einer Map kann mithilfe des Schlüssels erfolgen. Die Methode find() gibt einen Iterator zurück, der auf das gesuchte Schlüssel-Wert-Paar zeigt. Wenn das Element nicht gefunden wird, gibt find() den Iterator, der auf das Ende der Map zeigt (myMap.end()), zurück.
+
+Beispiel:
+#boxed(```cpp
+#include <iostream>
+#include <map>
+
+int main() {
+    std::map<std::string, int> myMap;
+
+    myMap["Alice"] = 25;
+    myMap["Bob"] = 30;
+    myMap["Charlie"] = 22;
+
+    std::map<std::string, int>::iterator it = myMap.find("Bob");
+    if (it != myMap.end()) {
+        std::cout << "Alter von Bob: " << it->second << std::endl;
+    } else {
+        std::cout << "Bob nicht gefunden." << std::endl;
+    }
+
+    return 0;
+}
+```)
+Die Ausgabe dieses Beispiels wird sein:
+
+Alter von Bob: 30
+
+=== Elemente in einer Map löschen
+Das Löschen von Elementen aus einer Map kann mit der Methode erase() erfolgen, indem der Schlüssel angegeben wird, der gelöscht werden soll.
+
+Beispiel:
+#boxed(```cpp
+#include <iostream>
+#include <map>
+
+int main() {
+    std::map<std::string, int> myMap;
+
+    myMap["Alice"] = 25;
+    myMap["Bob"] = 30;
+    myMap["Charlie"] = 22;
+
+    myMap.erase("Bob");
+
+    for (const auto& entry : myMap) {
+        std::cout << entry.first << ": " << entry.second << std::endl;
+    }
+
+    return 0;
+}
+```)
+Die Ausgabe dieses Beispiels wird sein:
+
+Alice: 25
+Charlie: 22
+
+=== Überprüfen, ob ein Schlüssel in der Map vorhanden ist
+Wir können mit der Methode count() überprüfen, ob ein bestimmter Schlüssel in der Map vorhanden ist. Diese Methode gibt 1 zurück, wenn der Schlüssel gefunden wird, oder 0, wenn der Schlüssel nicht gefunden wird.
+
+Beispiel:
+#boxed(```cpp
+#include <iostream>
+#include <map>
+
+int main() {
+    std::map<std::string, int> myMap;
+
+    myMap["Alice"] = 25;
+    myMap["Bob"] = 30;
+    myMap["Charlie"] = 22;
+
+    if (myMap.count("Alice") > 0) {
+        std::cout << "Alice ist in der Map." << std::endl;
+    } else {
+        std::cout << "Alice ist nicht in der Map." << std::endl;
+    }
+
+    if (myMap.count("David") > 0) {
+        std::cout << "David ist in der Map." << std::endl;
+    } else {
+        std::cout << "David ist nicht in der Map." << std::endl;
+    }
+
+    return 0;
+}
+```)
+Die Ausgabe dieses Beispiels wird sein:
+
+Alice ist in der Map.
+David ist nicht in der Map.
+
+Maps sind nützlich, um Schlüssel-Wert-Paare zu speichern und effizient darauf zuzugreifen. Sie bieten eine schnelle Suche nach einem bestimmten Schlüssel und sind ideal, wenn Sie Elemente basierend auf einem Schlüssel verknüpfen müssen. Maps sind eine wichtige Komponente der C++-Standardbibliothek und finden in vielen Anwendungsfällen Anwendung, bei denen die Daten nach dem Schlüssel organisiert und verwaltet werden müssen.
+= Zusammenfassung
+== C++-Arrays vs. Vector und andere Elemente der STL
+C++-Arrays sind statische Container, deren Größe zur Compile-Zeit festgelegt wird. Sie bieten schnellen Zugriff, aber sie sind nicht so flexibel in der Größenänderung.
+
+Vektoren (std::vector) sind dynamische Container, deren Größe zur Laufzeit verändert werden kann. Sie sind vielseitiger als C++-Arrays und bieten ähnliche Funktionen. Um Vektoren zu verwenden, muss der <vector>-Header inkludiert werden.
+
+Die Standard Template Library (STL) enthält viele nützliche Container und Algorithmen, die die Arbeit mit Daten in C++ erleichtern. Dazu gehören Vektoren, Listen, Sets, Maps und mehr.
+
+== Iteratoren
+
+Iteratoren sind Objekte, die es ermöglichen, durch die Elemente eines Containers zu iterieren, ohne die interne Implementierung des Containers zu kennen. Sie sind nützlich, um auf die Elemente zuzugreifen, sie zu bearbeiten oder nach bestimmten Werten zu suchen.
+
+Iteratoren können verwendet werden, um den Inhalt eines Containers zu durchlaufen, indem sie auf die Anfangs- und Endposition des Containers verweisen. Diese sind als begin() und end() Methoden im Container verfügbar.
+
+Mit dem Iterator it können wir auf den Wert eines Elements zugreifen, auf das it zeigt, indem wir `*it` verwenden.
+
+== Listen
+
+Listen (std::list) sind doppelt verkettete Listen, die eine effiziente Einfügung und Löschung von Elementen am Anfang, am Ende oder irgendwo innerhalb der Liste ermöglichen. Um Listen zu verwenden, muss der <list>-Header inkludiert werden.
+
+== Arrays aus der STL
+
+Arrays (std::array) in der STL sind statische Container, deren Größe zur Compile-Zeit festgelegt wird und die ähnliche Funktionen wie C++-Arrays bieten. Sie ermöglichen jedoch eine sicherere Nutzung und Interoperabilität mit STL-Algorithmen. Um Arrays zu verwenden, muss der <array>-Header inkludiert werden.
+
+== Sets
+
+Sets (std::set) sind Container, die eine geordnete Sammlung eindeutiger Elemente speichern. Wenn Elemente zu einem Set hinzugefügt werden, werden Duplikate automatisch entfernt, da ein Set keine doppelten Elemente zulässt. Elemente werden in aufsteigender Reihenfolge gespeichert, um eine schnelle Suche und den Zugriff zu ermöglichen.
+
+Wir können Elemente zu einem Set hinzufügen, nach einem bestimmten Wert suchen, Elemente aus einem Set löschen und überprüfen, ob ein bestimmtes Element in einem Set vorhanden ist.
+
+== Mehrfache Elemente und Element-Identität in Sets
+
+Wenn wir Elemente zu einem Set hinzufügen, wird automatisch geprüft, ob das Element bereits im Set vorhanden ist. Falls ja, wird das Element nicht erneut hinzugefügt. Dadurch wird sichergestellt, dass das Set immer nur eindeutige Elemente enthält.
+
+Bei der Suche nach Elementen in einem Set können wir die Methode find() verwenden, um nach einem bestimmten Wert zu suchen. Wenn das Element im Set vorhanden ist, gibt find() einen Iterator zurück, der auf das gesuchte Element zeigt. Wenn das Element nicht gefunden wird, gibt find() den Iterator, der auf das Ende des Sets zeigt (mySet.end()), zurück.
+
+== Maps
+
+Maps (std::map) sind Container-Klassen, die eine Menge von Schlüssel-Wert-Paaren speichern. Jeder Schlüssel in einer Map muss eindeutig sein, und die Elemente werden nach den Schlüsseln sortiert, um eine schnelle Suche und den Zugriff zu ermöglichen.
+
+Wir können Schlüssel-Wert-Paare zu einer Map hinzufügen, nach einem bestimmten Schlüssel suchen, Schlüssel-Wert-Paare aus einer Map löschen und überprüfen, ob ein bestimmter Schlüssel in einer Map vorhanden ist.
+
+Die in Lektion 3 behandelten Themen bieten eine solide Grundlage für das Arbeiten mit Container-Klassen und Iteratoren in C++. Sie ermöglichen eine effiziente Verwaltung und Organisation von Daten in Programmen und bieten vielfältige Möglichkeiten zur Durchführung von Operationen auf den enthaltenen Elementen.
+= Fragen
+== Multiple Choice
+*Frage 1*: Was ist der Hauptunterschied zwischen C++-Arrays und Vektoren in der STL?
++ C++-Arrays können zur Laufzeit ihre Größe ändern, während Vektoren eine feste Größe haben.
++ Vektoren können Duplikate von Elementen speichern, während C++-Arrays nur eindeutige Elemente erlauben.
++ C++-Arrays sind statische Container, während Vektoren dynamische Container sind.
++ Vektoren können nur Elemente vom Typ int speichern, während C++-Arrays verschiedene Datentypen unterstützen.
+
+*Frage 2*: Welche Header-Datei muss in C++ inkludiert werden, um Vektoren zu verwenden?
++ <vector>
++ <array>
++ <list>
++ <set>
+
+*Frage 3*: Was ist ein Iterator in C++?
++ Ein Iterator ist ein Zeiger auf ein Element in einem C++-Array.
++ Ein Iterator ist ein Zeiger auf eine Funktion in einem C++-Programm.
++ Ein Iterator ist ein Objekt, das es ermöglicht, durch die Elemente eines Containers zu iterieren, ohne die interne Implementierung des Containers zu kennen.
++ Ein Iterator ist eine Art Schleife in C++, die durch eine Bedingung gesteuert wird.
+
+*Frage 4*: Wie kann auf den Wert eines Elements, auf das ein Iterator zeigt, zugegriffen werden?
++ Durch die Verwendung von (`*it`)
++ Durch die Verwendung von it.value()
++ Durch die Verwendung von it.element()
+d) Durch die Verwendung von it->value
+
+*Frage 5*: Welche Container-Klasse in der STL ermöglicht eine schnelle Einfügung und Löschung von Elementen am Anfang, am Ende oder innerhalb der Liste?
++ Vector
++ Map
++ List
++ Set
+
+*Frage 6*: Welche Methode in einem Set in der STL überprüft, ob ein bestimmtes Element vorhanden ist?
++ check()
++ find()
++ contains()
++ search()
+
+*Frage 7*: Was passiert, wenn ein Element zu einem Set in der STL hinzugefügt wird und das Element bereits vorhanden ist?
++ Das Element wird ignoriert und nicht erneut hinzugefügt.
++ Das Element wird gelöscht und durch das neue Element ersetzt.
++ Das Set gibt eine Fehlermeldung aus.
++ Das Set fügt das Element zweimal hinzu, da es Duplikate erlaubt.
+
+*Frage 8*: Welche Methode in einer Map in der STL ermöglicht die Suche nach einem bestimmten Schlüssel?
++ get()
++ search()
++ find()
++ locate()
+
+*Frage 9*: Was ist der Zweck von Maps in C++?
++ Maps dienen zum Speichern einer geordneten Liste von Werten.
++ Maps dienen zum Speichern von Schlüssel-Wert-Paaren, wobei jeder Schlüssel eindeutig ist.
++ Maps dienen zum schnellen Zugriff auf Elemente in einem Array.
++ Maps dienen zur Verwaltung von Zeichenketten in C++.
+
+*Frage 10*: Welche Header-Datei muss in C++ inkludiert werden, um Maps zu verwenden?
++ <vector>
++ <map>
++ <set>
++ <array>
+
+*Frage 11*: Welche der folgenden Aussagen über C++-Arrays und Vektoren in der STL ist korrekt?
+a) C++-Arrays sind dynamische Container, während Vektoren eine feste Größe haben.
+b) C++-Arrays bieten eine effiziente Möglichkeit, Elemente einzufügen und zu löschen, während Vektoren dafür weniger geeignet sind.
+c) Vektoren können verschiedene Datentypen speichern, während C++-Arrays nur einen Datentyp unterstützen.
+d) C++-Arrays und Vektoren sind im Grunde genommen gleich und können in den meisten Fällen austauschbar verwendet werden.
+
+*Frage 12*: Welche der folgenden Aussagen über Iteratoren in C++ ist falsch?
+a) Iteratoren bieten eine Möglichkeit, durch die Elemente eines Containers zu iterieren, ohne die interne Implementierung des Containers zu kennen.
+b) Ein Iterator ist im Wesentlichen ein Zeiger auf ein Element im Container.
+c) Es ist sicher, auf einen Iterator zuzugreifen, der über das Ende des Containers hinauszeigt.
+d) Iteratoren ermöglichen es, auf den Wert eines Elements zuzugreifen, indem `*it` verwendet wird.
+
+*Frage 13*: Welche Container-Klasse in der STL ist am besten geeignet, wenn häufige Einfügungen und Löschungen von Elementen am Anfang und Ende des Containers vorkommen?
+a) Vector
+b) Map
+c) List
+d) Set
+
+*Frage 14*: Welche der folgenden Aussagen über Sets in der STL ist korrekt?
+a) Sets sind Container, die doppelte Elemente erlauben, da sie keine Duplikate entfernen.
+b) Die Methode find() in einem Set gibt immer den Iterator zurück, der auf das gesuchte Element zeigt.
+c) Sets sind nicht geordnete Container, und ihre Elemente werden zufällig angeordnet.
+d) Ein Set kann auch Null-Elemente enthalten, wenn sie explizit hinzugefügt wurden.
+
+*Frage 15*: Welche Methode in einer Map in der STL ermöglicht es, den Wert eines bestimmten Schlüssels zu ändern?
+a) modify()
+b) update()
+c) set()
+d) operator[]
+
+*Frage 16*: Was passiert, wenn wir ein Element zu einer Map in der STL hinzufügen und das Element bereits mit demselben Schlüssel vorhanden ist?
+a) Das Element wird durch das neue Element ersetzt.
+b) Das Element wird ignoriert, und die ursprüngliche Zuordnung bleibt unverändert.
+c) Das Element wird gelöscht, und das neue Element wird am Ende der Map hinzugefügt.
+d) Das Element wird an den Anfang der Map verschoben.
+
+*Frage 17*: Welche Methode in einem Set in der STL überprüft, ob ein bestimmtes Element vorhanden ist, und gibt eine Anzahl zurück, wie oft es im Set vorkommt?
+a) exists()
+b) count()
+c) size()
+d) contains()
+
+=== Übersicht der richtigen Antworten:
++ 3) C++-Arrays sind statische Container, während Vektoren dynamische Container sind.
++ 1) <vector>
++ 3) Ein Iterator ist ein Objekt, das es ermöglicht, durch die Elemente eines Containers zu iterieren, ohne die interne Implementierung des Containers zu kennen.
++ 1) Durch die Verwendung von (`*it`)
++ 3) List
++ 2) find()
++ 1) Das Element wird ignoriert und nicht erneut hinzugefügt.
++ 3) find()
++ 2) Maps dienen zum Speichern von Schlüssel-Wert-Paaren, wobei jeder Schlüssel eindeutig ist.
++ 2) `<map>`
++ 4) C++-Arrays und Vektoren sind im Grunde genommen gleich und können in den meisten Fällen austauschbar verwendet werden.
++ 3) Es ist sicher, auf einen Iterator zuzugreifen, der über das Ende des Containers hinauszeigt.
++ 3) List
++ 2) Die Methode find() in einem Set gibt immer den Iterator zurück, der auf das gesuchte Element zeigt.
++ 4) operator[]
++ 1) Das Element wird durch das neue Element ersetzt.
++ 2) count()
+== Erklärungen
+*Frage 1*: Erläutere den Unterschied zwischen einem C++-Array und einem Vector in der STL. Wann sollte man jeweils einen Array oder einen Vector verwenden und warum?
+
+*Frage 2*: Beschreibe den Zweck und die Funktionsweise von Iteratoren in C++. Welche Vorteile bieten Iteratoren gegenüber herkömmlichen Schleifen wie for und while?
+
+*Frage 3*: Erkläre, was eine Liste (std::list) in der STL ist und wie sie intern implementiert ist. Nenne mindestens zwei Szenarien, in denen der Einsatz einer Liste gegenüber einem Vector sinnvoll wäre.
+
+*Frage 4*: Stelle die Unterschiede zwischen einem Array aus der STL (std::array) und einem C++-Array dar. Welche Vorteile bietet std::array gegenüber C++-Arrays und in welchen Situationen wäre die Verwendung von C++-Arrays angemessen?
+
+*Frage 5*: Beschreibe die Funktionsweise eines Sets in der STL. Nenne mindestens zwei Eigenschaften von Sets, die sie von anderen Containern in der STL unterscheiden.
+
+=== Antworten:
+*Frage 1*: C++-Arrays sind statische Container mit fester Größe, während Vektoren dynamische Container sind und ihre Größe zur Laufzeit ändern können. Arrays sind geeignet, wenn die Größe zur Compile-Zeit bekannt ist und schnelleren Zugriff ermöglichen. Vektoren sind flexibler, wenn Größenänderungen erforderlich sind.
+
+*Frage 2*: Iteratoren sind Objekte, die es ermöglichen, durch die Elemente eines Containers zu iterieren, ohne die interne Implementierung des Containers zu kennen. Sie bieten eine abstrahierte Schnittstelle, um auf Elemente zuzugreifen und erleichtern die Arbeit mit verschiedenen Containertypen. Im Gegensatz zu herkömmlichen Schleifen erlauben Iteratoren einen allgemeineren Zugriff auf Containerdaten und sind weniger fehleranfällig.
+
+*Frage 3*: Eine Liste in der STL ist eine doppelt verkettete Liste, bei der jedes Element einen Zeiger auf das vorherige und das nächste Element enthält. Sie ermöglicht effiziente Einfügung und Löschung von Elementen am Anfang, am Ende und überall innerhalb der Liste. Listen eignen sich gut, wenn häufige Einfügungen und Löschungen in der Mitte des Containers vorkommen und wenn Iterator-Invalidierungen minimiert werden müssen.
+
+*Frage 4*: Ein Array aus der STL (std::array) ist ein statischer Container mit fester Größe, dessen Größe zur Compile-Zeit festgelegt wird. Im Gegensatz dazu sind C++-Arrays dynamische Container, deren Größe zur Laufzeit festgelegt werden kann. std::array bietet mehr Sicherheit und Kompatibilität mit STL-Algorithmen, während C++-Arrays für spezifische Größen oder situationsbedingte Größenänderungen verwendet werden können.
+
+*Frage 5*: Sets in der STL sind Container, die eine geordnete Sammlung eindeutiger Elemente speichern. Sie sortieren die Elemente aufsteigend, um schnellen Zugriff und Suche zu ermöglichen. Sets erlauben keine Duplikate, sodass jedes Element im Set eindeutig ist. Die Suche nach Elementen in einem Set ist besonders effizient, da die Elemente in einer Baumstruktur organisiert sind.
