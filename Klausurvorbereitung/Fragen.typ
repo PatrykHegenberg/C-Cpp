@@ -1,9 +1,28 @@
+// begin Styling
+#set page(
+ paper: "a4",
+ margin: (x: 2.0cm, y: 2.0cm),
+)
+#set text(
+ font: "Noto Sans",
+ size: 11pt,
+ lang: "de"
+)
+#set par(
+ justify: true,
+ linebreaks: "optimized",
+ leading: 1.5em
+)
+// end Styling
+
 #let boxed(term) = block(
  fill: luma(230),
  inset: 8pt,
  radius: 4pt,
  term
 )
+#show par: set block(spacing: 0.55em)
+#show heading: set block(above: 1.4em, below: 1em)
 = Fragen
 == Einheit 1
 === Multiple-Choice

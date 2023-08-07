@@ -21,6 +21,8 @@
  radius: 4pt,
  term
 )
+#show par: set block(spacing: 0.55em)
+#show heading: set block(above: 1.4em, below: 1em)
 // Start document
 
 #include "titel.typ"
