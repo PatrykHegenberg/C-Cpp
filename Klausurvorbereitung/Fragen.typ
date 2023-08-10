@@ -87,6 +87,7 @@
 + Es gibt keinen Unterschied zwischen der do-while- und der while-Schleife.
 
 *Antworten*:
+
 + 2) auto
 +  3) do-while-Schleife
 +  3) Sie ist eine Variable, die während der Programmausführung nicht geändert werden kann.
@@ -111,6 +112,7 @@
 + Erkläre, wie man eine globale Variable in C++ deklariert und warum es wichtig ist, sie richtig zu verwenden.
 
 *Antworten*:
+
 + float wird für Gleitkommazahlen mit einfacher Genauigkeit verwendet, während double für Gleitkommazahlen mit doppelter Genauigkeit verwendet wird. double bietet mehr Genauigkeit als float.
 + Die automatische Typ-Deduktion mit auto erlaubt es dem Compiler, den Datentyp einer Variablen anhand ihres zugewiesenen Werts automatisch zu bestimmen. Es wird verwendet, um den Code lesbarer und flexibler zu gestalten, insbesondere bei der Verwendung von komplexen oder generischen Datentypen.
 + Lokale Variablen werden innerhalb eines Codeblocks deklariert und sind nur in diesem Codeblock sichtbar. Globale Variablen werden außerhalb von Funktionen deklariert und sind im gesamten Programm sichtbar. Lokale Variablen werden verwendet, wenn die Variable nur in einem begrenzten Bereich gültig sein soll, während globale Variablen verwendet werden, wenn die Variable von verschiedenen Teilen des Programms aus zugänglich sein muss.
@@ -196,7 +198,9 @@ int main() {
 + std::file_open file("daten.txt", std::ios::write);
 + std::ofstream file("daten.txt");
 + std::file_open("daten.txt", std::ios::write);
-*Richtige Antworten:*
+
+*Antworten:*
+
 + 2) numbers.push_back(42);
 + 1) numbers.size();
 + 3) std::cout();
@@ -220,8 +224,8 @@ int main() {
 *Antworten*
 
 *Frage 1*:
-    Eine for-Schleife wird verwendet, wenn die Anzahl der Schleifendurchläufe im Voraus bekannt ist oder wenn man eine bestimmte Anzahl von Wiederholungen benötigt. Die for-Schleife besteht aus einer Initialisierung, einer Bedingung und einer Aktualisierung.
-    Eine while-Schleife wird verwendet, wenn die Anzahl der Schleifendurchläufe nicht im Voraus bekannt ist oder wenn die Schleife abhängig von einer Bedingung ausgeführt werden soll. Die while-Schleife besteht nur aus einer Bedingung.
+Eine for-Schleife wird verwendet, wenn die Anzahl der Schleifendurchläufe im Voraus bekannt ist oder wenn man eine bestimmte Anzahl von Wiederholungen benötigt. Die for-Schleife besteht aus einer Initialisierung, einer Bedingung und einer Aktualisierung.
+Eine while-Schleife wird verwendet, wenn die Anzahl der Schleifendurchläufe nicht im Voraus bekannt ist oder wenn die Schleife abhängig von einer Bedingung ausgeführt werden soll. Die while-Schleife besteht nur aus einer Bedingung.
 
 *Frage 2*:
 Um mehrere Daten aus einer Zeile mit std::cin in C++ einzulesen, kann man den Eingabestrom std::cin mit >> und std::getline kombinieren. Mit >> können einzelne Daten wie Ganzzahlen oder Gleitkommazahlen eingelesen werden, während std::getline verwendet wird, um den Rest der Zeile einzulesen, einschließlich Leerzeichen.
@@ -326,8 +330,8 @@ Frage 6:
 In C++ kann man eine Funktion erstellen, die eine Variable als Referenz übernimmt, indem man einen Referenzparameter verwendet. Ein Referenzparameter wird mit einem & vor dem Datentyp deklariert.
 
 Vorteile einer Referenzparameter-Funktion:
-    - Eine Referenzparameter-Funktion kann den Wert einer Variablen ändern, die von außerhalb der Funktion übergeben wird.
-    - Durch die Verwendung von Referenzen kann man unnötige Kopien von Daten vermeiden, was die Performance verbessert.
+- Eine Referenzparameter-Funktion kann den Wert einer Variablen ändern, die von außerhalb der Funktion übergeben wird.
+- Durch die Verwendung von Referenzen kann man unnötige Kopien von Daten vermeiden, was die Performance verbessert.
 
 Beispiel:
 #boxed(```cpp
@@ -359,10 +363,10 @@ Die Verwendung von Referenzparametern kann sehr nützlich sein, um Änderungen a
 + Vektoren können nur Elemente vom Typ int speichern, während C++-Arrays verschiedene Datentypen unterstützen.
 
 *Frage 2*: Welche Header-Datei muss in C++ inkludiert werden, um Vektoren zu verwenden?
-+ <vector>
-+ <array>
-+ <list>
-+ <set>
++ `<vector>`
++ `<array>`
++ `<list>`
++ `<set>`
 
 *Frage 3*: Was ist ein Iterator in C++?
 + Ein Iterator ist ein Zeiger auf ein Element in einem C++-Array.
@@ -374,7 +378,7 @@ Die Verwendung von Referenzparametern kann sehr nützlich sein, um Änderungen a
 + Durch die Verwendung von (`*it`)
 + Durch die Verwendung von it.value()
 + Durch die Verwendung von it.element()
-d) Durch die Verwendung von it->value
++ Durch die Verwendung von it->value
 
 *Frage 5*: Welche Container-Klasse in der STL ermöglicht eine schnelle Einfügung und Löschung von Elementen am Anfang, am Ende oder innerhalb der Liste?
 + Vector
@@ -407,52 +411,52 @@ d) Durch die Verwendung von it->value
 + Maps dienen zur Verwaltung von Zeichenketten in C++.
 
 *Frage 10*: Welche Header-Datei muss in C++ inkludiert werden, um Maps zu verwenden?
-+ <vector>
-+ <map>
-+ <set>
-+ <array>
++ `<vector>`
++ `<map>`
++ `<set>`
++ `<array>`
 
 *Frage 11*: Welche der folgenden Aussagen über C++-Arrays und Vektoren in der STL ist korrekt?
-a) C++-Arrays sind dynamische Container, während Vektoren eine feste Größe haben.
-b) C++-Arrays bieten eine effiziente Möglichkeit, Elemente einzufügen und zu löschen, während Vektoren dafür weniger geeignet sind.
-c) Vektoren können verschiedene Datentypen speichern, während C++-Arrays nur einen Datentyp unterstützen.
-d) C++-Arrays und Vektoren sind im Grunde genommen gleich und können in den meisten Fällen austauschbar verwendet werden.
++ C++-Arrays sind dynamische Container, während Vektoren eine feste Größe haben.
++ C++-Arrays bieten eine effiziente Möglichkeit, Elemente einzufügen und zu löschen, während Vektoren dafür weniger geeignet sind.
++ Vektoren können verschiedene Datentypen speichern, während C++-Arrays nur einen Datentyp unterstützen.
++ C++-Arrays und Vektoren sind im Grunde genommen gleich und können in den meisten Fällen austauschbar verwendet werden.
 
 *Frage 12*: Welche der folgenden Aussagen über Iteratoren in C++ ist falsch?
-a) Iteratoren bieten eine Möglichkeit, durch die Elemente eines Containers zu iterieren, ohne die interne Implementierung des Containers zu kennen.
-b) Ein Iterator ist im Wesentlichen ein Zeiger auf ein Element im Container.
-c) Es ist sicher, auf einen Iterator zuzugreifen, der über das Ende des Containers hinauszeigt.
-d) Iteratoren ermöglichen es, auf den Wert eines Elements zuzugreifen, indem `*it` verwendet wird.
++ Iteratoren bieten eine Möglichkeit, durch die Elemente eines Containers zu iterieren, ohne die interne Implementierung des Containers zu kennen.
++ Ein Iterator ist im Wesentlichen ein Zeiger auf ein Element im Container.
++ Es ist sicher, auf einen Iterator zuzugreifen, der über das Ende des Containers hinauszeigt.
++ Iteratoren ermöglichen es, auf den Wert eines Elements zuzugreifen, indem `*it` verwendet wird.
 
 *Frage 13*: Welche Container-Klasse in der STL ist am besten geeignet, wenn häufige Einfügungen und Löschungen von Elementen am Anfang und Ende des Containers vorkommen?
-a) Vector
-b) Map
-c) List
-d) Set
++ Vector
++ Map
++ List
++ Set
 
 *Frage 14*: Welche der folgenden Aussagen über Sets in der STL ist korrekt?
-a) Sets sind Container, die doppelte Elemente erlauben, da sie keine Duplikate entfernen.
-b) Die Methode find() in einem Set gibt immer den Iterator zurück, der auf das gesuchte Element zeigt.
-c) Sets sind nicht geordnete Container, und ihre Elemente werden zufällig angeordnet.
-d) Ein Set kann auch Null-Elemente enthalten, wenn sie explizit hinzugefügt wurden.
++ Sets sind Container, die doppelte Elemente erlauben, da sie keine Duplikate entfernen.
++ Die Methode find() in einem Set gibt immer den Iterator zurück, der auf das gesuchte Element zeigt.
++ Sets sind nicht geordnete Container, und ihre Elemente werden zufällig angeordnet.
++ Ein Set kann auch Null-Elemente enthalten, wenn sie explizit hinzugefügt wurden.
 
 *Frage 15*: Welche Methode in einer Map in der STL ermöglicht es, den Wert eines bestimmten Schlüssels zu ändern?
-a) modify()
-b) update()
-c) set()
-d) operator[]
++ modify()
++ update()
++ set()
++ operator[]
 
 *Frage 16*: Was passiert, wenn wir ein Element zu einer Map in der STL hinzufügen und das Element bereits mit demselben Schlüssel vorhanden ist?
-a) Das Element wird durch das neue Element ersetzt.
-b) Das Element wird ignoriert, und die ursprüngliche Zuordnung bleibt unverändert.
-c) Das Element wird gelöscht, und das neue Element wird am Ende der Map hinzugefügt.
-d) Das Element wird an den Anfang der Map verschoben.
++ Das Element wird durch das neue Element ersetzt.
++ Das Element wird ignoriert, und die ursprüngliche Zuordnung bleibt unverändert.
++ Das Element wird gelöscht, und das neue Element wird am Ende der Map hinzugefügt.
++ Das Element wird an den Anfang der Map verschoben.
 
 *Frage 17*: Welche Methode in einem Set in der STL überprüft, ob ein bestimmtes Element vorhanden ist, und gibt eine Anzahl zurück, wie oft es im Set vorkommt?
-a) exists()
-b) count()
-c) size()
-d) contains()
++ exists()
++ count()
++ size()
++ contains()
 
 *Antworten*:
 
@@ -498,108 +502,109 @@ d) contains()
 == Einheit 4
 === Multiple Choice
 *Frage 1*: Was ist das Überladen von Funktionen in C++?
-a) Das Kopieren von Funktionen, um sie mehrfach im Code zu verwenden.
-b) Das Erstellen von Funktionen mit gleichem Namen, aber unterschiedlicher Anzahl und/oder Typen von Parametern.
-c) Das Ersetzen von Funktionen durch andere Funktionen, um den Code effizienter zu gestalten.
-d) Das Verstecken von Funktionen, um sie vor dem Zugriff anderer Teile des Codes zu schützen.
++ Das Kopieren von Funktionen, um sie mehrfach im Code zu verwenden.
++ Das Erstellen von Funktionen mit gleichem Namen, aber unterschiedlicher Anzahl und/oder Typen von Parametern.
++ Das Ersetzen von Funktionen durch andere Funktionen, um den Code effizienter zu gestalten.
++ Das Verstecken von Funktionen, um sie vor dem Zugriff anderer Teile des Codes zu schützen.
 
 *Frage 2*: Welcher Aspekt der Funktionen wird bei der Überladung nicht berücksichtigt?
-a) Die Anzahl der Argumente.
-b) Die Reihenfolge der Argumente.
-c) Die Typen der Argumente.
-d) Der Rückgabetyp der Funktion.
++ Die Anzahl der Argumente.
++ Die Reihenfolge der Argumente.
++ Die Typen der Argumente.
++ Der Rückgabetyp der Funktion.
 
 *Frage 3*: Welche Überladung würde der Compiler bevorzugen, wenn sowohl int als auch double als Argumente übergeben werden?
-a) int-Version
-b) double-Version
-c) Es wird eine Fehlermeldung erzeugt, da die Überladung mehrdeutig ist.
-d) Der Compiler wählt eine Überladung zufällig aus.
++ int-Version
++ double-Version
++ Es wird eine Fehlermeldung erzeugt, da die Überladung mehrdeutig ist.
++ Der Compiler wählt eine Überladung zufällig aus.
 
 *Frage 4*: Kann die Überladung von Funktionen basierend auf dem Rückgabetyp erfolgen?
-a) Ja, es ist möglich, Funktionen basierend auf dem Rückgabetyp zu überladen.
-b) Nein, die Überladung basiert ausschließlich auf den Argumenten einer Funktion.
-c) Nur, wenn der Rückgabetyp ein Zeiger ist.
-d) Nur, wenn der Rückgabetyp ein benutzerdefinierter Datentyp ist.
++ Ja, es ist möglich, Funktionen basierend auf dem Rückgabetyp zu überladen.
++ Nein, die Überladung basiert ausschließlich auf den Argumenten einer Funktion.
++ Nur, wenn der Rückgabetyp ein Zeiger ist.
++ Nur, wenn der Rückgabetyp ein benutzerdefinierter Datentyp ist.
 
 *Frage 5*: Wofür kann die Überladung von Funktionen verwendet werden?
-a) Um die Sichtbarkeit einer Funktion zu ändern.
-b) Um mehrere Funktionen mit unterschiedlichen Rückgabetypen zu erstellen.
-c) Um verschiedene Varianten einer Funktion anzubieten, die unterschiedliche Argumenttypen oder Anforderungen unterstützen.
-d) Um Funktionen in einer anderen Datei zu verbergen.
++ Um die Sichtbarkeit einer Funktion zu ändern.
++ Um mehrere Funktionen mit unterschiedlichen Rückgabetypen zu erstellen.
++ Um verschiedene Varianten einer Funktion anzubieten, die unterschiedliche Argumenttypen oder Anforderungen unterstützen.
++ Um Funktionen in einer anderen Datei zu verbergen.
 
 *Frage 6*: Welche der folgenden Aussagen ist falsch?
-a) Überladene Funktionen können verschiedene Rückgabetypen haben.
-b) Der Compiler wählt die spezifischste Überladung aus, wenn mehrere passende Überladungen vorhanden sind.
-c) Standardargumente können bei der Überladung von Funktionen verwendet werden.
-d) Funktionen, die sich nur im Rückgabetyp unterscheiden, können überladen werden.
++ Überladene Funktionen können verschiedene Rückgabetypen haben.
++ Der Compiler wählt die spezifischste Überladung aus, wenn mehrere passende Überladungen vorhanden sind.
++ Standardargumente können bei der Überladung von Funktionen verwendet werden.
++ Funktionen, die sich nur im Rückgabetyp unterscheiden, können überladen werden.
 
 *Frage 7*: Welche der folgenden Aussagen zur Verwendung von Pointern ist korrekt?
-a) Pointer sind in C++ nicht erlaubt.
-b) Pointer werden immer automatisch auf nullptr initialisiert.
-c) Pointer können auf den Adressen von Funktionen zeigen.
-d) Es ist nicht möglich, Pointer auf benutzerdefinierte Datentypen zu erstellen.
++ Pointer sind in C++ nicht erlaubt.
++ Pointer werden immer automatisch auf nullptr initialisiert.
++ Pointer können auf den Adressen von Funktionen zeigen.
++ Es ist nicht möglich, Pointer auf benutzerdefinierte Datentypen zu erstellen.
 
 *Frage 8*: Was ist eine Referenz in C++?
-a) Eine Variable, die keinen Wert speichert.
-b) Ein Alias oder Spitzname für eine bestehende Variable.
-c) Eine Klasse, die andere Klassen erbt.
-d) Eine Funktion, die von einer anderen Funktion aufgerufen wird.
++ Eine Variable, die keinen Wert speichert.
++ Ein Alias oder Spitzname für eine bestehende Variable.
++ Eine Klasse, die andere Klassen erbt.
++ Eine Funktion, die von einer anderen Funktion aufgerufen wird.
 
 *Frage 9*: Was passiert bei der Call-by-Value Übergabe von Argumenten an eine Funktion?
-a) Die Argumente werden per Referenz übergeben.
-b) Die Argumente werden per Zeiger übergeben.
-c) Eine Kopie der Argumente wird erstellt und an die Funktion übergeben.
-d) Die Argumente werden verschlüsselt und an die Funktion übergeben.
++ Die Argumente werden per Referenz übergeben.
++ Die Argumente werden per Zeiger übergeben.
++ Eine Kopie der Argumente wird erstellt und an die Funktion übergeben.
++ Die Argumente werden verschlüsselt und an die Funktion übergeben.
 
 *Frage 10*: Wozu dienen Funktionstemplates in C++?
-a) Zur Definition von Funktionen mit identischem Code.
-b) Zur Definition von Funktionen, die verschiedene Rückgabetypen haben.
-c) Zur Definition von Funktionen, die mit verschiedenen Datentypen arbeiten können.
-d) Zur Definition von Funktionen, die nur mit benutzerdefinierten Datentypen arbeiten können.
++ Zur Definition von Funktionen mit identischem Code.
++ Zur Definition von Funktionen, die verschiedene Rückgabetypen haben.
++ Zur Definition von Funktionen, die mit verschiedenen Datentypen arbeiten können.
++ Zur Definition von Funktionen, die nur mit benutzerdefinierten Datentypen arbeiten können.
 
 *Frage 11*: Welche der folgenden Aussagen zum Überladen von Funktionen ist korrekt?
-a) Überladene Funktionen müssen immer denselben Rückgabetyp haben.
-b) Der Compiler wählt immer die erste Überladung, die den gegebenen Argumenten entspricht.
-c) Funktionen können nur dann überladen werden, wenn sie unterschiedliche Namen haben.
-d) Die Überladung basiert auf der Anzahl und den Typen der Argumente einer Funktion.
++ Überladene Funktionen müssen immer denselben Rückgabetyp haben.
++ Der Compiler wählt immer die erste Überladung, die den gegebenen Argumenten entspricht.
++ Funktionen können nur dann überladen werden, wenn sie unterschiedliche Namen haben.
++ Die Überladung basiert auf der Anzahl und den Typen der Argumente einer Funktion.
 
 *Frage 12*: Welche Art von Referenz wird in C++ häufig verwendet, um sicherzustellen, dass eine Funktion keine Kopie der Argumente erstellt?
-a) R-Wert-Referenz
-b) L-Wert-Referenz
-c) Konstante Referenz
-d) Statistische Referenz
++ R-Wert-Referenz
++ L-Wert-Referenz
++ Konstante Referenz
++ Statistische Referenz
 
 *Frage 13*: Was passiert bei der Call-by-Reference Übergabe von Argumenten an eine Funktion?
-a) Die Argumente werden per Wert übergeben und eine Kopie wird erstellt.
-b) Die Argumente werden per Zeiger übergeben.
-c) Eine Referenz auf die ursprünglichen Argumente wird erstellt und an die Funktion übergeben.
-d) Die Argumente werden verschlüsselt und an die Funktion übergeben.
++ Die Argumente werden per Wert übergeben und eine Kopie wird erstellt.
++ Die Argumente werden per Zeiger übergeben.
++ Eine Referenz auf die ursprünglichen Argumente wird erstellt und an die Funktion übergeben.
++ Die Argumente werden verschlüsselt und an die Funktion übergeben.
 
 *Frage 14*: Welcher Aspekt der Funktionenüberladung ermöglicht die Verwendung von Standardargumenten?
-a) Die Anzahl der Argumente.
-b) Die Reihenfolge der Argumente.
-c) Die Typen der Argumente.
-d) Der Rückgabetyp der Funktion.
++ Die Anzahl der Argumente.
++ Die Reihenfolge der Argumente.
++ Die Typen der Argumente.
++ Der Rückgabetyp der Funktion.
 
 *Frage 15*: Wie kann man verhindern, dass eine Funktion mit bestimmten Argumenttypen überladen wird?
-a) Es ist nicht möglich, die Überladung für bestimmte Argumenttypen zu verhindern.
-b) Die Funktion muss mit final gekennzeichnet werden.
-c) Die Funktion muss als const deklariert werden.
-d) Die Funktion muss als static deklariert werden.
++ Es ist nicht möglich, die Überladung für bestimmte Argumenttypen zu verhindern.
++ Die Funktion muss mit final gekennzeichnet werden.
++ Die Funktion muss als const deklariert werden.
++ Die Funktion muss als static deklariert werden.
 
 *Frage 16*: Welche der folgenden Aussagen zum Überladen von Funktionen in C++ ist korrekt?
-a) Überladene Funktionen können sich nur im Rückgabetyp unterscheiden.
-b) Funktionen können nicht überladen werden, wenn sie in unterschiedlichen Dateien definiert sind.
-c) Bei der Überladung muss die Reihenfolge der Argumente in allen Funktionen gleich sein.
-d) Die Überladung basiert auf der Anzahl und den Typen der Argumente einer Funktion.
++ Überladene Funktionen können sich nur im Rückgabetyp unterscheiden.
++ Funktionen können nicht überladen werden, wenn sie in unterschiedlichen Dateien definiert sind.
++ Bei der Überladung muss die Reihenfolge der Argumente in allen Funktionen gleich sein.
++ Die Überladung basiert auf der Anzahl und den Typen der Argumente einer Funktion.
 
 *Frage 17*: Was ist ein Vorteil der Verwendung von Templates für Funktionen?
-a) Templates ermöglichen die Verwendung beliebiger Rückgabetypen.
-b) Templates ermöglichen die Erstellung von Funktionen, die mehrere Typen unterstützen.
-c) Templates vereinfachen die Syntax der Funktionen.
-d) Templates können verhindern, dass Funktionen überladen werden müssen.
++ Templates ermöglichen die Verwendung beliebiger Rückgabetypen.
++ Templates ermöglichen die Erstellung von Funktionen, die mehrere Typen unterstützen.
++ Templates vereinfachen die Syntax der Funktionen.
++ Templates können verhindern, dass Funktionen überladen werden müssen.
 
 *Antworten*:
+
 + 2
 + 4
 + 3
@@ -845,6 +850,7 @@ Hinweis: Die Funktion add kann sowohl für Ganzzahlen als auch für Gleitkommaza
 + Eine Klasse kann von einer anderen Klasse abgeleitet werden.
 
 *Antworten*:
+
 + 2) "using" wird verwendet, um einen Alias für einen Datentypen zu erstellen.
 + 2) Pairs enthalten immer genau zwei Elemente.
 + 2) Tuples können beliebig viele Elemente enthalten.
@@ -929,6 +935,7 @@ Beschreibe den Compiler in C++ und seine Rolle bei der Übersetzung von Quellcod
 
 *Frage 20*:
 Erkläre, was der Linker in C++ ist und wie er verwendet wird, um ausführbare Programme aus den übersetzten Objektdateien zu erstellen.
+
 *Antworten*:
 
 *Frage 1*:
