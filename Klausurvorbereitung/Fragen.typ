@@ -797,7 +797,7 @@ Hinweis: Die Funktion add kann sowohl für Ganzzahlen als auch für Gleitkommaza
 
 *Frage 16*:Welche der folgenden Aussagen zu Destruktoren in C++ ist richtig?
 + Ein Destruktor wird aufgerufen, wenn ein Objekt einer Klasse erzeugt wird.
-+ Ein Destruktor hat den gleichen Namen wie die Klasse, aber mit einem führenden "~".
++ Ein Destruktor hat den gleichen Namen wie die Klasse, aber mit einem führenden "`~`".
 + Ein Destruktor kann Rückgabewerte haben.
 + Ein Destruktor wird explizit durch den Entwickler aufgerufen.
 
